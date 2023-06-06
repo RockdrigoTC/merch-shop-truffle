@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "name": "AC/DC",
+    "picture": "images/ac-dc.jpg",
+    "color": "Negro",
+    "size": "Mediana",
+    "brand": "Monster",
+    "price": "1500000000000000000"
+  },
+  {
+    "id": 1,
+    "name": "Beatles",
+    "picture": "images/beatles.jpeg",
+    "color": "Negro",
+    "size": "Mediana",
+    "brand": "Monster",
+    "price": "2000000000000000000"
+  },
+  {
+    "id": 2,
+    "name": "Caifanes",
+    "picture": "images/caifanes.jpg",
+    "color": "Negro",
+    "size": "Mediana",
+    "brand": "Monster",
+    "price": "1000000000000000000"
+  },
+  {
+    "id": 3,
+    "name": "Guns N' Roses",
+    "picture": "images/guns-n-roses.jpeg",
+    "color": "Negro",
+    "size": "Mediana",
+    "brand": "Monster",
+    "price": "1500000000000000000"
+  },
+  {
+    "id": 4,
+    "name": "Kiss",
+    "picture": "images/kiss.jpg",
+    "color": "Negro",
+    "size": "Mediana",
+    "brand": "Monster",
+    "price": "500000000000000000"
+  },
+  {
+    "id": 5,
+    "name": "Motorhead",
+    "picture": "images/motorhead.jpg",
+    "color": "Negro",
+    "size": "Mediana",
+    "brand": "Monster",
+    "price": "500000000000000000"
+  },
+  {
+    "id": 6,
+    "name": "Nirvana",
+    "picture": "images/nirvana.jpg",
+    "color": "Negro",
+    "size": "Mediana",
+    "brand": "Monster",
+    "price": "3000000000000000000"
+  },
+  {
+    "id": 7,
+    "name": "Queen",
+    "picture": "images/queen.jpg",
+    "color": "Negro",
+    "size": "Mediana",
+    "brand": "Monster",
+    "price": "2000000000000000000"
+  }
+]
