@@ -62,8 +62,8 @@ App = {
       return instance.getMerchs.call();
     }).then((merchs) => {
       for (i = 0; i < merchs.length; i++) {
-        if (merchs[i] == '0x0000000000000000000000000000000000000000') {
-          $('.panel-merch').eq(i).find('button').text('Agotada').attr('disabled', true);
+        if (merchs[i] !== '0x0000000000000000000000000000000000000000') {
+          $('.fondoBoton').eq(i).find('button').text('Agotada').attr('disabled', true);
         }
       }
     }).catch(err => {
