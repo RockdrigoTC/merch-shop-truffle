@@ -75,36 +75,24 @@ App = {
     event.preventDefault();
   
     var merchId = parseInt($(event.target).data('id'));
+
+    var getValue = new Promise((resolve) => {
+      ($.getJSON('../merch.json', function(data) {
+        var price = data[merchId].price;
+        resolve (price);
+      }));
+    });
   
-    var buyInstance;
-  
-    web3.eth.getAccounts(function(error, accounts) {
+    web3.eth.getAccounts(async (error, accounts) => {
       if (error) {
         console.log(error);
       }
-  
       var account = accounts[0];
-  
-      App.contracts.Buy.deployed().then(function(instance) {
-        buyInstance = instance;
-  
-        // Obtain the price from merch.json based on the merchId
-        $.getJSON('../merch.json', function(data) {
-          var price = data[merchId].price;
-  
-          // Execute buy as a transaction by sending account and value
-          return buyInstance.buy(merchId, {from: account, value: price})
-            .on("transactionHash", function(hash) {
-              // Transaction initiated, can perform actions like showing loading spinner
-              console.log("Transaction hash: " + hash);
-            });
-        });
-      }).then(function(result) {
-        // Transaction confirmed, call markBought
-        App.markBought();
-      }).catch(function(err) {
-        console.log(err.message);
-      });
+      var buyInstance = await App.contracts.Buy.deployed();
+      var value = await getValue
+      await buyInstance.buy(merchId, {from: account, value });
+      App.markBought();
+
     });
   }
   
