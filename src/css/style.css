@@ -1,26 +1,55 @@
 
 body {
-    padding-top: 20px;
+    padding-top: 30px;
 }
 
-.panel-merch {
-    margin-bottom: 20px;
+.espaciado {
+    margin-bottom: 120px;
+    
+}
+.fondo{
+    background-image: url("../images/rock.PNG");
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+
+.titulo{
+font-family:'Courier New', Courier, monospace;
+text-align: center;
+}
+
+.linea{
+background-color: rgb(16, 20, 79);
+height: 3px;
+width: 50%;
+margin-top: 0.7rem !important;
+margin-bottom: 80px;
+
 }
 
 .panel-title {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    margin-top: 50%;
+    color: rgb(246, 246, 188);
+    text-shadow: 3px 0 #000000;
+    text-decoration: double;
 }
 
 .img-center {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-height: 140px;
+    max-height: 180px;
 }
 
 .merch-details {
+    text-align: center;
     margin-top: 15px;
+   margin-bottom: 15px;
+   color: #fff;
+   background-color: rgba(48, 73, 69, 0.62);
 }
 
 .merch-details strong {
@@ -30,14 +59,19 @@ body {
 .merch-price {
     font-size: 16px;
     font-weight: bold;
-    color: #337ab7;
+    color: #d8dc56;
 }
 
 .btn-buy {
-    width: 100%;
-    margin-top: 10px;
+     width: 30%;
+    background-color: #0000008b;
+    color:#fff;
+   margin-left: 35%;
 }
 
+.colorcard{
+    background-color: rgba(154, 152, 140, 0.744);
+}
 @media (min-width: 768px) {
     .panel-merch {
         height: 430px;
