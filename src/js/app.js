@@ -1,3 +1,4 @@
+
 App = {
   web3Provider: null,
   contracts: {},
@@ -81,13 +82,12 @@ App = {
           purchases[i] = count;
         }
         console.log(purchases);
-        // Obtener los datos del archivo merch.json
+     
         $.getJSON('../merch.json', function(data) {
           var filteredPurchases = [];
           for (let i = 0; i < purchases.length; i++) {
             if (purchases[i] > 0) {
               filteredPurchases.push({
-                account: account,
                 id: i,
                 name: data[i].name,
                 picture: data[i].picture,
@@ -101,7 +101,7 @@ App = {
           }
 
           // Llamar a la función para mostrar los datos en la interfaz y abrir el modal
-          App.displayPurchases(filteredPurchases);
+          App.displayPurchases(account, filteredPurchases);
           $('#purchasesModal').modal('show');
         });
 
@@ -111,13 +111,12 @@ App = {
     });
     },
 
-
-    displayPurchases: function(purchases) {
+    displayPurchases: function(account,purchases) {
       var purchasesContainer = $('#purchasesContainer');
       purchasesContainer.empty();
       var accountContainer = $('#modal-account');
       accountContainer.empty();
-      accountContainer.append(`<strong>Cuenta:</strong> <span class="merch-cuenta"" >${purchases[0].account}</span>`);
+      accountContainer.append(`<strong>Cuenta:</strong> <span class="merch-cuenta"" >${account}</span>`);
       for (var i = 0; i < purchases.length; i++) {
         var merchTemplate = `
           <div class="merch-purchase">
@@ -136,9 +135,6 @@ App = {
       }
     },
     
-    
-
-
   markBought: () => {
     App.contracts.Buy.deployed().then((instance) => {
       $.getJSON('../merch.json', function(data) {
@@ -183,14 +179,18 @@ App = {
       var account = accounts[0];
       var buyInstance = await App.contracts.Buy.deployed();
       var value = await getValue
-      await buyInstance.buy(merchId, {from: account, value });
-      $('.fondoBoton').eq(merchId).find('button').attr('disabled', false);
-      App.markBought();
+      try {
+        await buyInstance.buy(merchId, { from: account, value });
+        $('.fondoBoton').eq(merchId).find('button').attr('disabled', false);
+        App.markBought();
+      } catch (error) {
+        console.log(error);
+        $('.fondoBoton').eq(merchId).find('button').attr('disabled', false);
+      }
 
     });
   }
   
-
 };
 
 $(function() {
