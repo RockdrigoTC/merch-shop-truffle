@@ -2,27 +2,6 @@
   "contractName": "Buy",
   "abi": [
     {
-      "constant": true,
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "merchs",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "constant": false,
       "inputs": [
         {
@@ -45,13 +24,19 @@
     },
     {
       "constant": true,
-      "inputs": [],
-      "name": "getMerchs",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "merchId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getBuyers",
       "outputs": [
         {
-          "internalType": "address[8]",
+          "internalType": "address[]",
           "name": "",
-          "type": "address[8]"
+          "type": "address[]"
         }
       ],
       "payable": false,
@@ -59,21 +44,21 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"merchId\",\"type\":\"uint256\"}],\"name\":\"buy\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getMerchs\",\"outputs\":[{\"internalType\":\"address[8]\",\"name\":\"\",\"type\":\"address[8]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"merchs\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Buy.sol\":\"Buy\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Buy.sol\":{\"keccak256\":\"0xf1e83d5001908c4e5b7531e89665465a49698436c1e504dfed6367f47a017bc0\",\"urls\":[\"bzz-raw://e3a14d093b66bb2c3806caadf567adb40e1a8f6f52e7a6b359e81f1092ec1b74\",\"dweb:/ipfs/QmTvKjEcYuD454K9H2y5nC5Ah8oXZcAi6TSqUuYY5CHCZq\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b506102c6806100206000396000f3fe6080604052600436106100345760003560e01c80632728baa4146100395780634ea4f1ec146100b4578063d96a094a14610107575b600080fd5b34801561004557600080fd5b506100726004803603602081101561005c57600080fd5b8101908080359060200190929190505050610149565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100c057600080fd5b506100c961017c565b6040518082600860200280838360005b838110156100f45780820151818401526020810190506100d9565b5050505090500191505060405180910390f35b6101336004803603602081101561011d57600080fd5b81019080803590602001909291905050506101fd565b6040518082815260200191505060405180910390f35b6000816008811061015657fe5b016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b61018461026e565b60006008806020026040519081016040528092919082600880156101f3576020028201915b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116101a9575b5050505050905090565b6000808210158015610210575060078211155b61021957600080fd5b336000836008811061022757fe5b0160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550819050919050565b60405180610100016040528060089060208202803883398082019150509050509056fea265627a7a723158202a60b94ef01dacc906ee5134ad5946e7fba22e1c8102f955b905b68ad5e0e06d64736f6c63430005100032",
-  "deployedBytecode": "0x6080604052600436106100345760003560e01c80632728baa4146100395780634ea4f1ec146100b4578063d96a094a14610107575b600080fd5b34801561004557600080fd5b506100726004803603602081101561005c57600080fd5b8101908080359060200190929190505050610149565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100c057600080fd5b506100c961017c565b6040518082600860200280838360005b838110156100f45780820151818401526020810190506100d9565b5050505090500191505060405180910390f35b6101336004803603602081101561011d57600080fd5b81019080803590602001909291905050506101fd565b6040518082815260200191505060405180910390f35b6000816008811061015657fe5b016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b61018461026e565b60006008806020026040519081016040528092919082600880156101f3576020028201915b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116101a9575b5050505050905090565b6000808210158015610210575060078211155b61021957600080fd5b336000836008811061022757fe5b0160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550819050919050565b60405180610100016040528060089060208202803883398082019150509050509056fea265627a7a723158202a60b94ef01dacc906ee5134ad5946e7fba22e1c8102f955b905b68ad5e0e06d64736f6c63430005100032",
-  "sourceMap": "27:334:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:334:0;;;;;;;",
-  "deployedSourceMap": "27:334:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;47:24;;8:9:-1;5:2;;;30:1;27;20:12;5:2;47:24:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;47:24:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;265:93;;8:9:-1;5:2;;;30:1;27;20:12;5:2;265:93:0;;;:::i;:::-;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;265:93:0;;;;;;;;;;;;;;;;80:177;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;80:177:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;47:24;;;;;;;;;;;;;;;;;;;;;;;:::o;265:93::-;307:17;;:::i;:::-;344:6;337:13;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;265:93;:::o;80:177::-;131:4;167:1;156:7;:12;;:28;;;;;183:1;172:7;:12;;156:28;148:37;;;;;;214:10;196:6;203:7;196:15;;;;;;;;;:28;;;;;;;;;;;;;;;;;;242:7;235:14;;80:177;;;:::o;27:334::-;;;;;;;;;;;29:2:-1;21:6;17:15;117:4;105:10;97:6;88:34;148:4;140:6;136:17;126:27;;0:157;27:334:0;;;;:::o",
-  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract Buy {\r\n    address[8] public merchs;\r\n\r\n    function buy(uint merchId) public payable returns (uint) {\r\n        require(merchId >= 0 && merchId <= 7);\r\n        merchs[merchId] = msg.sender;\r\n        return merchId;\r\n    }\r\n\r\n    function getMerchs() public view returns (address[8] memory) {\r\n        return merchs;\r\n    }\r\n}\r\n",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"merchId\",\"type\":\"uint256\"}],\"name\":\"buy\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"merchId\",\"type\":\"uint256\"}],\"name\":\"getBuyers\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Buy.sol\":\"Buy\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Buy.sol\":{\"keccak256\":\"0xc64e0797af8e8a746cf163cfe910f58bca4ebe0cb3134366887b269c248c1d3c\",\"urls\":[\"bzz-raw://ee1cab58ab733f34fb228a0e146f1881c2f8110917e0cb92771685d435d52128\",\"dweb:/ipfs/QmU79z9XuUEfwrGsuHgt2D2SagffLG28hJc2ZiHVyRFNfJ\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610288806100206000396000f3fe6080604052600436106100295760003560e01c80637feafd201461002e578063d96a094a146100be575b600080fd5b34801561003a57600080fd5b506100676004803603602081101561005157600080fd5b8101908080359060200190929190505050610100565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100aa57808201518184015260208101905061008f565b505050509050019250505060405180910390f35b6100ea600480360360208110156100d457600080fd5b81019080803590602001909291905050506101ba565b6040518082815260200191505060405180910390f35b606060008210158015610114575060078211155b61011d57600080fd5b6000826008811061012a57fe5b016000018054806020026020016040519081016040528092919081815260200182805480156101ae57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610164575b50505050509050919050565b60008082101580156101cd575060078211155b6101d657600080fd5b600082600881106101e357fe5b016000013390806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505081905091905056fea265627a7a7231582009d64942f999a0d92cf062e85ddd5fe3a24ad8d7342373307d7f1847b228b76864736f6c63430005100032",
+  "deployedBytecode": "0x6080604052600436106100295760003560e01c80637feafd201461002e578063d96a094a146100be575b600080fd5b34801561003a57600080fd5b506100676004803603602081101561005157600080fd5b8101908080359060200190929190505050610100565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100aa57808201518184015260208101905061008f565b505050509050019250505060405180910390f35b6100ea600480360360208110156100d457600080fd5b81019080803590602001909291905050506101ba565b6040518082815260200191505060405180910390f35b606060008210158015610114575060078211155b61011d57600080fd5b6000826008811061012a57fe5b016000018054806020026020016040519081016040528092919081815260200182805480156101ae57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610164575b50505050509050919050565b60008082101580156101cd575060078211155b6101d657600080fd5b600082600881106101e357fe5b016000013390806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505081905091905056fea265627a7a7231582009d64942f999a0d92cf062e85ddd5fe3a24ad8d7342373307d7f1847b228b76864736f6c63430005100032",
+  "sourceMap": "27:475:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:475:0;;;;;;;",
+  "deployedSourceMap": "27:475:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;331:168;;8:9:-1;5:2;;;30:1;27;20:12;5:2;331:168:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;331:168:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;331:168:0;;;;;;;;;;;;;;;;;135:188;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;135:188:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;331:168;385:16;433:1;422:7;:12;;:28;;;;;449:1;438:7;:12;;422:28;414:37;;;;;;469:6;476:7;469:15;;;;;;;;:22;;462:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;331:168;;;:::o;135:188::-;186:4;222:1;211:7;:12;;:28;;;;;238:1;227:7;:12;;211:28;203:37;;;;;;251:6;258:7;251:15;;;;;;;;:22;;279:10;251:39;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;251:39:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;308:7;301:14;;135:188;;;:::o",
+  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract Buy {\r\n    struct Merch {\r\n        address[] buyers;\r\n    }\r\n\r\n    Merch[8] private merchs;\r\n\r\n    function buy(uint merchId) public payable returns (uint) {\r\n        require(merchId >= 0 && merchId <= 7);\r\n        merchs[merchId].buyers.push(msg.sender);\r\n        return merchId;\r\n    }\r\n\r\n    function getBuyers(uint merchId) public view returns (address[] memory) {\r\n        require(merchId >= 0 && merchId <= 7);\r\n        return merchs[merchId].buyers;\r\n    }\r\n}\r\n",
   "sourcePath": "E:\\Desarrollo\\Programacion\\truffle-merch-shop\\contracts\\Buy.sol",
   "ast": {
     "absolutePath": "project:/contracts/Buy.sol",
     "exportedSymbols": {
       "Buy": [
-        43
+        63
       ]
     },
-    "id": 44,
+    "id": 64,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -93,50 +78,99 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 43,
+        "id": 63,
         "linearizedBaseContracts": [
-          43
+          63
         ],
         "name": "Buy",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "constant": false,
+            "canonicalName": "Buy.Merch",
             "id": 5,
+            "members": [
+              {
+                "constant": false,
+                "id": 4,
+                "name": "buyers",
+                "nodeType": "VariableDeclaration",
+                "scope": 5,
+                "src": "71:16:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                  "typeString": "address[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 2,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "71:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 3,
+                  "length": null,
+                  "nodeType": "ArrayTypeName",
+                  "src": "71:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                    "typeString": "address[]"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Merch",
+            "nodeType": "StructDefinition",
+            "scope": 63,
+            "src": "47:48:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 9,
             "name": "merchs",
             "nodeType": "VariableDeclaration",
-            "scope": 43,
-            "src": "47:24:0",
+            "scope": 63,
+            "src": "103:23:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_address_$8_storage",
-              "typeString": "address[8]"
+              "typeIdentifier": "t_array$_t_struct$_Merch_$5_storage_$8_storage",
+              "typeString": "struct Buy.Merch[8]"
             },
             "typeName": {
               "baseType": {
-                "id": 2,
-                "name": "address",
-                "nodeType": "ElementaryTypeName",
-                "src": "47:7:0",
-                "stateMutability": "nonpayable",
+                "contractScope": null,
+                "id": 6,
+                "name": "Merch",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 5,
+                "src": "103:5:0",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_address",
-                  "typeString": "address"
+                  "typeIdentifier": "t_struct$_Merch_$5_storage_ptr",
+                  "typeString": "struct Buy.Merch"
                 }
               },
-              "id": 4,
+              "id": 8,
               "length": {
                 "argumentTypes": null,
                 "hexValue": "38",
-                "id": 3,
+                "id": 7,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "55:1:0",
+                "src": "109:1:0",
                 "subdenomination": null,
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_8_by_1",
@@ -145,20 +179,20 @@
                 "value": "8"
               },
               "nodeType": "ArrayTypeName",
-              "src": "47:10:0",
+              "src": "103:8:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_address_$8_storage_ptr",
-                "typeString": "address[8]"
+                "typeIdentifier": "t_array$_t_struct$_Merch_$5_storage_$8_storage_ptr",
+                "typeString": "struct Buy.Merch[8]"
               }
             },
             "value": null,
-            "visibility": "public"
+            "visibility": "private"
           },
           {
             "body": {
-              "id": 31,
+              "id": 37,
               "nodeType": "Block",
-              "src": "137:120:0",
+              "src": "192:131:0",
               "statements": [
                 {
                   "expression": {
@@ -170,7 +204,7 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 19,
+                        "id": 23,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -181,19 +215,19 @@
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 15,
+                          "id": 19,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
                             "argumentTypes": null,
-                            "id": 13,
+                            "id": 17,
                             "name": "merchId",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 7,
-                            "src": "156:7:0",
+                            "referencedDeclaration": 11,
+                            "src": "211:7:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -204,14 +238,14 @@
                           "rightExpression": {
                             "argumentTypes": null,
                             "hexValue": "30",
-                            "id": 14,
+                            "id": 18,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "167:1:0",
+                            "src": "222:1:0",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_0_by_1",
@@ -219,7 +253,7 @@
                             },
                             "value": "0"
                           },
-                          "src": "156:12:0",
+                          "src": "211:12:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -233,19 +267,19 @@
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 18,
+                          "id": 22,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
                             "argumentTypes": null,
-                            "id": 16,
+                            "id": 20,
                             "name": "merchId",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 7,
-                            "src": "172:7:0",
+                            "referencedDeclaration": 11,
+                            "src": "227:7:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -256,14 +290,14 @@
                           "rightExpression": {
                             "argumentTypes": null,
                             "hexValue": "37",
-                            "id": 17,
+                            "id": 21,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "183:1:0",
+                            "src": "238:1:0",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_7_by_1",
@@ -271,13 +305,13 @@
                             },
                             "value": "7"
                           },
-                          "src": "172:12:0",
+                          "src": "227:12:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "src": "156:28:0",
+                        "src": "211:28:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -291,21 +325,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 12,
+                      "id": 16,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        94,
-                        95
+                        114,
+                        115
                       ],
-                      "referencedDeclaration": 94,
-                      "src": "148:7:0",
+                      "referencedDeclaration": 114,
+                      "src": "203:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 20,
+                    "id": 24,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -313,48 +347,441 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "148:37:0",
+                    "src": "203:37:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 21,
+                  "id": 25,
                   "nodeType": "ExpressionStatement",
-                  "src": "148:37:0"
+                  "src": "203:37:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 27,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 31,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 111,
+                          "src": "279:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 32,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "279:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 26,
+                            "name": "merchs",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 9,
+                            "src": "251:6:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_array$_t_struct$_Merch_$5_storage_$8_storage",
+                              "typeString": "struct Buy.Merch storage ref[8] storage ref"
+                            }
+                          },
+                          "id": 28,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 27,
+                            "name": "merchId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 11,
+                            "src": "258:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "251:15:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Merch_$5_storage",
+                            "typeString": "struct Buy.Merch storage ref"
+                          }
+                        },
+                        "id": 29,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "buyers",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4,
+                        "src": "251:22:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 30,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "251:27:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) returns (uint256)"
+                      }
+                    },
+                    "id": 33,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
+                    "kind": "functionCall",
                     "lValueRequested": false,
-                    "leftHandSide": {
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "251:39:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 34,
+                  "nodeType": "ExpressionStatement",
+                  "src": "251:39:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 35,
+                    "name": "merchId",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11,
+                    "src": "308:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 15,
+                  "id": 36,
+                  "nodeType": "Return",
+                  "src": "301:14:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 38,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "buy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11,
+                  "name": "merchId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 38,
+                  "src": "148:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "148:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "147:14:0"
+            },
+            "returnParameters": {
+              "id": 15,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 38,
+                  "src": "186:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "186:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "185:6:0"
+            },
+            "scope": 63,
+            "src": "135:188:0",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 61,
+              "nodeType": "Block",
+              "src": "403:96:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 53,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 49,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 47,
+                            "name": "merchId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 40,
+                            "src": "422:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": ">=",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 48,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "433:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          "src": "422:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "&&",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 52,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 50,
+                            "name": "merchId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 40,
+                            "src": "438:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "<=",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "37",
+                            "id": 51,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "449:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_7_by_1",
+                              "typeString": "int_const 7"
+                            },
+                            "value": "7"
+                          },
+                          "src": "438:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "422:28:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 46,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        114,
+                        115
+                      ],
+                      "referencedDeclaration": 114,
+                      "src": "414:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 54,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "414:37:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 55,
+                  "nodeType": "ExpressionStatement",
+                  "src": "414:37:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 22,
+                        "id": 56,
                         "name": "merchs",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 5,
-                        "src": "196:6:0",
+                        "referencedDeclaration": 9,
+                        "src": "469:6:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_address_$8_storage",
-                          "typeString": "address[8] storage ref"
+                          "typeIdentifier": "t_array$_t_struct$_Merch_$5_storage_$8_storage",
+                          "typeString": "struct Buy.Merch storage ref[8] storage ref"
                         }
                       },
-                      "id": 24,
+                      "id": 58,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 23,
+                        "id": 57,
                         "name": "merchId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7,
-                        "src": "203:7:0",
+                        "referencedDeclaration": 40,
+                        "src": "476:7:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -363,94 +790,53 @@
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
-                      "lValueRequested": true,
-                      "nodeType": "IndexAccess",
-                      "src": "196:15:0",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_address",
-                        "typeString": "address"
-                      }
-                    },
-                    "nodeType": "Assignment",
-                    "operator": "=",
-                    "rightHandSide": {
-                      "argumentTypes": null,
-                      "expression": {
-                        "argumentTypes": null,
-                        "id": 25,
-                        "name": "msg",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 91,
-                        "src": "214:3:0",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_magic_message",
-                          "typeString": "msg"
-                        }
-                      },
-                      "id": 26,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": false,
                       "lValueRequested": false,
-                      "memberName": "sender",
-                      "nodeType": "MemberAccess",
-                      "referencedDeclaration": null,
-                      "src": "214:10:0",
+                      "nodeType": "IndexAccess",
+                      "src": "469:15:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_address_payable",
-                        "typeString": "address payable"
+                        "typeIdentifier": "t_struct$_Merch_$5_storage",
+                        "typeString": "struct Buy.Merch storage ref"
                       }
                     },
-                    "src": "196:28:0",
+                    "id": 59,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "buyers",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 4,
+                    "src": "469:22:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                      "typeString": "address[] storage ref"
                     }
                   },
-                  "id": 28,
-                  "nodeType": "ExpressionStatement",
-                  "src": "196:28:0"
-                },
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "id": 29,
-                    "name": "merchId",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 7,
-                    "src": "242:7:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "functionReturnParameters": 11,
-                  "id": 30,
+                  "functionReturnParameters": 45,
+                  "id": 60,
                   "nodeType": "Return",
-                  "src": "235:14:0"
+                  "src": "462:29:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 32,
+            "id": 62,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "buy",
+            "name": "getBuyers",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 8,
+              "id": 41,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7,
+                  "id": 40,
                   "name": "merchId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 32,
-                  "src": "93:12:0",
+                  "scope": 62,
+                  "src": "350:12:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -458,180 +844,84 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "93:4:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "92:14:0"
-            },
-            "returnParameters": {
-              "id": 11,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 10,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 32,
-                  "src": "131:4:0",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 9,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "131:4:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "130:6:0"
-            },
-            "scope": 43,
-            "src": "80:177:0",
-            "stateMutability": "payable",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 41,
-              "nodeType": "Block",
-              "src": "326:32:0",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
                     "id": 39,
-                    "name": "merchs",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 5,
-                    "src": "344:6:0",
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "350:4:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_address_$8_storage",
-                      "typeString": "address[8] storage ref"
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 38,
-                  "id": 40,
-                  "nodeType": "Return",
-                  "src": "337:13:0"
+                  "value": null,
+                  "visibility": "internal"
                 }
-              ]
-            },
-            "documentation": null,
-            "id": 42,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "getMerchs",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 33,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "283:2:0"
+              ],
+              "src": "349:14:0"
             },
             "returnParameters": {
-              "id": 38,
+              "id": 45,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 37,
+                  "id": 44,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 42,
-                  "src": "307:17:0",
+                  "scope": 62,
+                  "src": "385:16:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_address_$8_memory_ptr",
-                    "typeString": "address[8]"
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 34,
+                      "id": 42,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "307:7:0",
+                      "src": "385:7:0",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 36,
-                    "length": {
-                      "argumentTypes": null,
-                      "hexValue": "38",
-                      "id": 35,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": true,
-                      "kind": "number",
-                      "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "315:1:0",
-                      "subdenomination": null,
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_rational_8_by_1",
-                        "typeString": "int_const 8"
-                      },
-                      "value": "8"
-                    },
+                    "id": 43,
+                    "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "307:10:0",
+                    "src": "385:9:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_address_$8_storage_ptr",
-                      "typeString": "address[8]"
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
                     }
                   },
                   "value": null,
                   "visibility": "internal"
                 }
               ],
-              "src": "306:19:0"
+              "src": "384:18:0"
             },
-            "scope": 43,
-            "src": "265:93:0",
+            "scope": 63,
+            "src": "331:168:0",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 44,
-        "src": "27:334:0"
+        "scope": 64,
+        "src": "27:475:0"
       }
     ],
-    "src": "0:363:0"
+    "src": "0:504:0"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "project:/contracts/Buy.sol",
       "exportedSymbols": {
         "Buy": [
-          43
+          63
         ]
       }
     },
@@ -661,38 +951,90 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            43
+            63
           ],
           "name": "Buy",
-          "scope": 44
+          "scope": 64
         },
         "children": [
           {
             "attributes": {
-              "constant": false,
-              "name": "merchs",
-              "scope": 43,
-              "stateVariable": true,
-              "storageLocation": "default",
-              "type": "address[8]",
-              "value": null,
+              "canonicalName": "Buy.Merch",
+              "name": "Merch",
+              "scope": 63,
               "visibility": "public"
             },
             "children": [
               {
                 "attributes": {
-                  "type": "address[8]"
+                  "constant": false,
+                  "name": "buyers",
+                  "scope": 5,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address[]",
+                  "value": null,
+                  "visibility": "internal"
                 },
                 "children": [
                   {
                     "attributes": {
-                      "name": "address",
-                      "stateMutability": "nonpayable",
-                      "type": "address"
+                      "length": null,
+                      "type": "address[]"
                     },
-                    "id": 2,
-                    "name": "ElementaryTypeName",
-                    "src": "47:7:0"
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2,
+                        "name": "ElementaryTypeName",
+                        "src": "71:7:0"
+                      }
+                    ],
+                    "id": 3,
+                    "name": "ArrayTypeName",
+                    "src": "71:9:0"
+                  }
+                ],
+                "id": 4,
+                "name": "VariableDeclaration",
+                "src": "71:16:0"
+              }
+            ],
+            "id": 5,
+            "name": "StructDefinition",
+            "src": "47:48:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "merchs",
+              "scope": 63,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct Buy.Merch[8]",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "struct Buy.Merch[8]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Merch",
+                      "referencedDeclaration": 5,
+                      "type": "struct Buy.Merch"
+                    },
+                    "id": 6,
+                    "name": "UserDefinedTypeName",
+                    "src": "103:5:0"
                   },
                   {
                     "attributes": {
@@ -707,19 +1049,19 @@
                       "type": "int_const 8",
                       "value": "8"
                     },
-                    "id": 3,
+                    "id": 7,
                     "name": "Literal",
-                    "src": "55:1:0"
+                    "src": "109:1:0"
                   }
                 ],
-                "id": 4,
+                "id": 8,
                 "name": "ArrayTypeName",
-                "src": "47:10:0"
+                "src": "103:8:0"
               }
             ],
-            "id": 5,
+            "id": 9,
             "name": "VariableDeclaration",
-            "src": "47:24:0"
+            "src": "103:23:0"
           },
           {
             "attributes": {
@@ -731,7 +1073,7 @@
                 null
               ],
               "name": "buy",
-              "scope": 43,
+              "scope": 63,
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "public"
@@ -743,7 +1085,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "merchId",
-                      "scope": 32,
+                      "scope": 38,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -756,19 +1098,19 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 6,
+                        "id": 10,
                         "name": "ElementaryTypeName",
-                        "src": "93:4:0"
+                        "src": "148:4:0"
                       }
                     ],
-                    "id": 7,
+                    "id": 11,
                     "name": "VariableDeclaration",
-                    "src": "93:12:0"
+                    "src": "148:12:0"
                   }
                 ],
-                "id": 8,
+                "id": 12,
                 "name": "ParameterList",
-                "src": "92:14:0"
+                "src": "147:14:0"
               },
               {
                 "children": [
@@ -776,7 +1118,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 32,
+                      "scope": 38,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -789,19 +1131,19 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 9,
+                        "id": 13,
                         "name": "ElementaryTypeName",
-                        "src": "131:4:0"
+                        "src": "186:4:0"
                       }
                     ],
-                    "id": 10,
+                    "id": 14,
                     "name": "VariableDeclaration",
-                    "src": "131:4:0"
+                    "src": "186:4:0"
                   }
                 ],
-                "id": 11,
+                "id": 15,
                 "name": "ParameterList",
-                "src": "130:6:0"
+                "src": "185:6:0"
               },
               {
                 "children": [
@@ -831,16 +1173,16 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                94,
-                                95
+                                114,
+                                115
                               ],
-                              "referencedDeclaration": 94,
+                              "referencedDeclaration": 114,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
-                            "id": 12,
+                            "id": 16,
                             "name": "Identifier",
-                            "src": "148:7:0"
+                            "src": "203:7:0"
                           },
                           {
                             "attributes": {
@@ -878,13 +1220,13 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 7,
+                                      "referencedDeclaration": 11,
                                       "type": "uint256",
                                       "value": "merchId"
                                     },
-                                    "id": 13,
+                                    "id": 17,
                                     "name": "Identifier",
-                                    "src": "156:7:0"
+                                    "src": "211:7:0"
                                   },
                                   {
                                     "attributes": {
@@ -899,14 +1241,14 @@
                                       "type": "int_const 0",
                                       "value": "0"
                                     },
-                                    "id": 14,
+                                    "id": 18,
                                     "name": "Literal",
-                                    "src": "167:1:0"
+                                    "src": "222:1:0"
                                   }
                                 ],
-                                "id": 15,
+                                "id": 19,
                                 "name": "BinaryOperation",
-                                "src": "156:12:0"
+                                "src": "211:12:0"
                               },
                               {
                                 "attributes": {
@@ -929,13 +1271,13 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 7,
+                                      "referencedDeclaration": 11,
                                       "type": "uint256",
                                       "value": "merchId"
                                     },
-                                    "id": 16,
+                                    "id": 20,
                                     "name": "Identifier",
-                                    "src": "172:7:0"
+                                    "src": "227:7:0"
                                   },
                                   {
                                     "attributes": {
@@ -950,29 +1292,29 @@
                                       "type": "int_const 7",
                                       "value": "7"
                                     },
-                                    "id": 17,
+                                    "id": 21,
                                     "name": "Literal",
-                                    "src": "183:1:0"
+                                    "src": "238:1:0"
                                   }
                                 ],
-                                "id": 18,
+                                "id": 22,
                                 "name": "BinaryOperation",
-                                "src": "172:12:0"
+                                "src": "227:12:0"
                               }
                             ],
-                            "id": 19,
+                            "id": 23,
                             "name": "BinaryOperation",
-                            "src": "156:28:0"
+                            "src": "211:28:0"
                           }
                         ],
-                        "id": 20,
+                        "id": 24,
                         "name": "FunctionCall",
-                        "src": "148:37:0"
+                        "src": "203:37:0"
                       }
                     ],
-                    "id": 21,
+                    "id": 25,
                     "name": "ExpressionStatement",
-                    "src": "148:37:0"
+                    "src": "203:37:0"
                   },
                   {
                     "children": [
@@ -982,53 +1324,96 @@
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
+                          "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "operator": "=",
-                          "type": "address"
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
                         },
                         "children": [
                           {
                             "attributes": {
-                              "argumentTypes": null,
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                }
+                              ],
                               "isConstant": false,
-                              "isLValue": true,
+                              "isLValue": false,
                               "isPure": false,
-                              "lValueRequested": true,
-                              "type": "address"
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (address) returns (uint256)"
                             },
                             "children": [
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 5,
-                                  "type": "address[8] storage ref",
-                                  "value": "merchs"
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "buyers",
+                                  "referencedDeclaration": 4,
+                                  "type": "address[] storage ref"
                                 },
-                                "id": 22,
-                                "name": "Identifier",
-                                "src": "196:6:0"
-                              },
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 7,
-                                  "type": "uint256",
-                                  "value": "merchId"
-                                },
-                                "id": 23,
-                                "name": "Identifier",
-                                "src": "203:7:0"
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "type": "struct Buy.Merch storage ref"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 9,
+                                          "type": "struct Buy.Merch storage ref[8] storage ref",
+                                          "value": "merchs"
+                                        },
+                                        "id": 26,
+                                        "name": "Identifier",
+                                        "src": "251:6:0"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 11,
+                                          "type": "uint256",
+                                          "value": "merchId"
+                                        },
+                                        "id": 27,
+                                        "name": "Identifier",
+                                        "src": "258:7:0"
+                                      }
+                                    ],
+                                    "id": 28,
+                                    "name": "IndexAccess",
+                                    "src": "251:15:0"
+                                  }
+                                ],
+                                "id": 29,
+                                "name": "MemberAccess",
+                                "src": "251:22:0"
                               }
                             ],
-                            "id": 24,
-                            "name": "IndexAccess",
-                            "src": "196:15:0"
+                            "id": 30,
+                            "name": "MemberAccess",
+                            "src": "251:27:0"
                           },
                           {
                             "attributes": {
@@ -1048,32 +1433,32 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 91,
+                                  "referencedDeclaration": 111,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 25,
+                                "id": 31,
                                 "name": "Identifier",
-                                "src": "214:3:0"
+                                "src": "279:3:0"
                               }
                             ],
-                            "id": 26,
+                            "id": 32,
                             "name": "MemberAccess",
-                            "src": "214:10:0"
+                            "src": "279:10:0"
                           }
                         ],
-                        "id": 27,
-                        "name": "Assignment",
-                        "src": "196:28:0"
+                        "id": 33,
+                        "name": "FunctionCall",
+                        "src": "251:39:0"
                       }
                     ],
-                    "id": 28,
+                    "id": 34,
                     "name": "ExpressionStatement",
-                    "src": "196:28:0"
+                    "src": "251:39:0"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 11
+                      "functionReturnParameters": 15
                     },
                     "children": [
                       {
@@ -1082,28 +1467,28 @@
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 7,
+                          "referencedDeclaration": 11,
                           "type": "uint256",
                           "value": "merchId"
                         },
-                        "id": 29,
+                        "id": 35,
                         "name": "Identifier",
-                        "src": "242:7:0"
+                        "src": "308:7:0"
                       }
                     ],
-                    "id": 30,
+                    "id": 36,
                     "name": "Return",
-                    "src": "235:14:0"
+                    "src": "301:14:0"
                   }
                 ],
-                "id": 31,
+                "id": 37,
                 "name": "Block",
-                "src": "137:120:0"
+                "src": "192:131:0"
               }
             ],
-            "id": 32,
+            "id": 38,
             "name": "FunctionDefinition",
-            "src": "80:177:0"
+            "src": "135:188:0"
           },
           {
             "attributes": {
@@ -1114,23 +1499,45 @@
               "modifiers": [
                 null
               ],
-              "name": "getMerchs",
-              "scope": 43,
+              "name": "getBuyers",
+              "scope": 63,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
             },
             "children": [
               {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 33,
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "merchId",
+                      "scope": 62,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 39,
+                        "name": "ElementaryTypeName",
+                        "src": "350:4:0"
+                      }
+                    ],
+                    "id": 40,
+                    "name": "VariableDeclaration",
+                    "src": "350:12:0"
+                  }
+                ],
+                "id": 41,
                 "name": "ParameterList",
-                "src": "283:2:0"
+                "src": "349:14:0"
               },
               {
                 "children": [
@@ -1138,17 +1545,18 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 42,
+                      "scope": 62,
                       "stateVariable": false,
                       "storageLocation": "memory",
-                      "type": "address[8]",
+                      "type": "address[]",
                       "value": null,
                       "visibility": "internal"
                     },
                     "children": [
                       {
                         "attributes": {
-                          "type": "address[8]"
+                          "length": null,
+                          "type": "address[]"
                         },
                         "children": [
                           {
@@ -1157,87 +1565,285 @@
                               "stateMutability": "nonpayable",
                               "type": "address"
                             },
-                            "id": 34,
+                            "id": 42,
                             "name": "ElementaryTypeName",
-                            "src": "307:7:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "hexvalue": "38",
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": true,
-                              "lValueRequested": false,
-                              "subdenomination": null,
-                              "token": "number",
-                              "type": "int_const 8",
-                              "value": "8"
-                            },
-                            "id": 35,
-                            "name": "Literal",
-                            "src": "315:1:0"
+                            "src": "385:7:0"
                           }
                         ],
-                        "id": 36,
+                        "id": 43,
                         "name": "ArrayTypeName",
-                        "src": "307:10:0"
+                        "src": "385:9:0"
                       }
                     ],
-                    "id": 37,
+                    "id": 44,
                     "name": "VariableDeclaration",
-                    "src": "307:17:0"
+                    "src": "385:16:0"
                   }
                 ],
-                "id": 38,
+                "id": 45,
                 "name": "ParameterList",
-                "src": "306:19:0"
+                "src": "384:18:0"
               },
               {
                 "children": [
                   {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                114,
+                                115
+                              ],
+                              "referencedDeclaration": 114,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 46,
+                            "name": "Identifier",
+                            "src": "414:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "&&",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": ">=",
+                                  "type": "bool"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 40,
+                                      "type": "uint256",
+                                      "value": "merchId"
+                                    },
+                                    "id": 47,
+                                    "name": "Identifier",
+                                    "src": "422:7:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "30",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 0",
+                                      "value": "0"
+                                    },
+                                    "id": 48,
+                                    "name": "Literal",
+                                    "src": "433:1:0"
+                                  }
+                                ],
+                                "id": 49,
+                                "name": "BinaryOperation",
+                                "src": "422:12:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "<=",
+                                  "type": "bool"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 40,
+                                      "type": "uint256",
+                                      "value": "merchId"
+                                    },
+                                    "id": 50,
+                                    "name": "Identifier",
+                                    "src": "438:7:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "37",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 7",
+                                      "value": "7"
+                                    },
+                                    "id": 51,
+                                    "name": "Literal",
+                                    "src": "449:1:0"
+                                  }
+                                ],
+                                "id": 52,
+                                "name": "BinaryOperation",
+                                "src": "438:12:0"
+                              }
+                            ],
+                            "id": 53,
+                            "name": "BinaryOperation",
+                            "src": "422:28:0"
+                          }
+                        ],
+                        "id": 54,
+                        "name": "FunctionCall",
+                        "src": "414:37:0"
+                      }
+                    ],
+                    "id": 55,
+                    "name": "ExpressionStatement",
+                    "src": "414:37:0"
+                  },
+                  {
                     "attributes": {
-                      "functionReturnParameters": 38
+                      "functionReturnParameters": 45
                     },
                     "children": [
                       {
                         "attributes": {
                           "argumentTypes": null,
-                          "overloadedDeclarations": [
-                            null
-                          ],
-                          "referencedDeclaration": 5,
-                          "type": "address[8] storage ref",
-                          "value": "merchs"
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "buyers",
+                          "referencedDeclaration": 4,
+                          "type": "address[] storage ref"
                         },
-                        "id": 39,
-                        "name": "Identifier",
-                        "src": "344:6:0"
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "struct Buy.Merch storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 9,
+                                  "type": "struct Buy.Merch storage ref[8] storage ref",
+                                  "value": "merchs"
+                                },
+                                "id": 56,
+                                "name": "Identifier",
+                                "src": "469:6:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 40,
+                                  "type": "uint256",
+                                  "value": "merchId"
+                                },
+                                "id": 57,
+                                "name": "Identifier",
+                                "src": "476:7:0"
+                              }
+                            ],
+                            "id": 58,
+                            "name": "IndexAccess",
+                            "src": "469:15:0"
+                          }
+                        ],
+                        "id": 59,
+                        "name": "MemberAccess",
+                        "src": "469:22:0"
                       }
                     ],
-                    "id": 40,
+                    "id": 60,
                     "name": "Return",
-                    "src": "337:13:0"
+                    "src": "462:29:0"
                   }
                 ],
-                "id": 41,
+                "id": 61,
                 "name": "Block",
-                "src": "326:32:0"
+                "src": "403:96:0"
               }
             ],
-            "id": 42,
+            "id": 62,
             "name": "FunctionDefinition",
-            "src": "265:93:0"
+            "src": "331:168:0"
           }
         ],
-        "id": 43,
+        "id": 63,
         "name": "ContractDefinition",
-        "src": "27:334:0"
+        "src": "27:475:0"
       }
     ],
-    "id": 44,
+    "id": 64,
     "name": "SourceUnit",
-    "src": "0:363:0"
+    "src": "0:504:0"
   },
   "compiler": {
     "name": "solc",
@@ -1247,12 +1853,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x46b93aDEd10905FA0e35ad4D150E00b58810BCE9",
-      "transactionHash": "0x2062fd13a192bff063294b356338080f305964c436e90e66fde00689d8908a81"
+      "address": "0x78aA16E6d55db53a6c72D372547AE7b7CBaA6899",
+      "transactionHash": "0xb234a7c50bdd5c5b73a1922926abf13d1c78b5240e55260e5d0f966485908f98"
     }
   },
   "schemaVersion": "3.4.14",
-  "updatedAt": "2023-06-07T09:03:28.536Z",
+  "updatedAt": "2023-06-08T03:28:34.195Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

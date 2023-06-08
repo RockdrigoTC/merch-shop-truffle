@@ -3,7 +3,6 @@ App = {
   contracts: {},
 
   init: async function() {
-    // Load merch.
     $.getJSON('../merch.json', function(data) {
       var merchRow = $('#merchRow');
       var merchTemplate = $('#merchTemplate');
@@ -14,9 +13,10 @@ App = {
         merchTemplate.find('.merch-size').text(data[i].size);
         merchTemplate.find('.merch-color').text(data[i].color);
         merchTemplate.find('.merch-brand').text(data[i].brand);
+        merchTemplate.find('.merch-stock').attr('data-id', data[i].id);
         merchTemplate.find('.merch-price').text((data[i].price / 10**18) + ' ETH');
         merchTemplate.find('.btn-buy').attr('data-id', data[i].id);
-
+        
         merchRow.append(merchTemplate.html());
       }
     });
@@ -59,22 +59,32 @@ App = {
 
   markBought: () => {
     App.contracts.Buy.deployed().then((instance) => {
-      return instance.getMerchs.call();
-    }).then((merchs) => {
-      for (i = 0; i < merchs.length; i++) {
-        if (merchs[i] !== '0x0000000000000000000000000000000000000000') {
-          $('.fondoBoton').eq(i).find('button').text('Agotada').attr('disabled', true);
+      $.getJSON('../merch.json', function(data) {
+        for (let i = 0; i < data.length; i++) {
+          instance.getBuyers(i).then((buyers) => {
+            let stock = data[i].stock;
+            let buyersCount = buyers.length;
+            
+            $('.merch-details').eq(i).find('.merch-stock').text(stock - buyersCount);
+            if (buyersCount >= stock) {
+              $('.fondoBoton').eq(i).find('button').text('Agotada').attr('disabled', true);
+            }
+          }).catch(err => {
+            console.log(err.message);
+          });
         }
-      }
+      });
     }).catch(err => {
       console.log(err.message);
     });
   },
+  
 
   handleBuy: function(event) {
     event.preventDefault();
   
     var merchId = parseInt($(event.target).data('id'));
+    $('.fondoBoton').eq(merchId).find('button').attr('disabled', true);
 
     var getValue = new Promise((resolve) => {
       ($.getJSON('../merch.json', function(data) {
@@ -91,6 +101,7 @@ App = {
       var buyInstance = await App.contracts.Buy.deployed();
       var value = await getValue
       await buyInstance.buy(merchId, {from: account, value });
+      $('.fondoBoton').eq(merchId).find('button').attr('disabled', false);
       App.markBought();
 
     });
