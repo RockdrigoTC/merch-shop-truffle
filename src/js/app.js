@@ -81,7 +81,7 @@ App = {
           }
           purchases[i] = count;
         }
-        console.log(purchases);
+       // console.log(purchases);
      
         $.getJSON('../merch.json', function(data) {
           var filteredPurchases = [];
@@ -117,6 +117,10 @@ App = {
       var accountContainer = $('#modal-account');
       accountContainer.empty();
       accountContainer.append(`<strong>Cuenta:</strong> <span class="merch-cuenta"" >${account}</span>`);
+      if (purchases.length === 0) {
+        var errorMessage = `<h3>No hay productos en existencia</h3>`;
+        purchasesContainer.append(errorMessage);
+        }
       for (var i = 0; i < purchases.length; i++) {
         var merchTemplate = `
           <div class="merch-purchase">
@@ -133,6 +137,7 @@ App = {
         `;
         purchasesContainer.append(merchTemplate);
       }
+
     },
     
   markBought: () => {
