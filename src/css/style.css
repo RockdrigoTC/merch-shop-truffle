@@ -21,14 +21,24 @@ body {
 }
 
 .linea{
-    background-color: rgb(16, 20, 79);
     height: 3px;
     width: 50%;
     margin-top: 0.7rem !important;
     margin-bottom: 150px;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-name: linea;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 
 }
-
+@keyframes linea{
+    25%   {background-color: rgb(227, 51, 51);}
+    25%  {background-color: yellow;}
+    50%  {background-color: rgb(0, 204, 255);}
+    25% {background-color: rgb(24, 247, 24);}
+  }
 .panel-title {
     font-size: 25px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -48,13 +58,16 @@ justify-content: center;
     left: 50%;
     transform: translate(-50%, -30%);
 }
-
+.close{
+    color: #f40b0b;
+    font-size: 40px;
+}
 .merch-details {
     text-align: center;
     margin-top: 15px;
    margin-bottom: 15px;
    color: #fff;
-   background-color: rgba(48, 73, 69, 0.62);
+   background-color: #3C2A21;
 }
 
 .merch-details strong {
