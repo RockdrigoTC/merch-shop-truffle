@@ -55,7 +55,89 @@ App = {
 
   bindEvents: function() {
     $(document).on('click', '.btn-buy', App.handleBuy);
+    $(document).on('click', '#btnShowPurchases', App.showPurchases);
   },
+
+  showPurchases: () => {
+    App.contracts.Buy.deployed().then(async (instance) => {
+      web3.eth.getAccounts(async (error, accounts) => {
+        if (error) {
+        console.log(error);
+        return;
+        }
+        var account = accounts[0];
+        const merchCount = await instance.getMerchCount();
+        const purchases = [];
+        for (let i = 0; i < merchCount; i++) {
+          const buyers = await instance.getBuyers(i);
+          purchases.push(0);
+          let count = 0;
+          for (let j = 0; j < buyers.length; j++) {
+            
+            if (buyers[j] == account) {
+              count++;
+            }
+          }
+          purchases[i] = count;
+        }
+        console.log(purchases);
+        // Obtener los datos del archivo merch.json
+        $.getJSON('../merch.json', function(data) {
+          var filteredPurchases = [];
+          for (let i = 0; i < purchases.length; i++) {
+            if (purchases[i] > 0) {
+              filteredPurchases.push({
+                account: account,
+                id: i,
+                name: data[i].name,
+                picture: data[i].picture,
+                size: data[i].size,
+                color: data[i].color,
+                brand: data[i].brand,
+                price: data[i].price,
+                quantity: purchases[i]
+              });
+            }
+          }
+
+          // Llamar a la función para mostrar los datos en la interfaz y abrir el modal
+          App.displayPurchases(filteredPurchases);
+          $('#purchasesModal').modal('show');
+        });
+
+      });
+    }).catch((error) => {
+    console.log(error);
+    });
+    },
+
+
+    displayPurchases: function(purchases) {
+      var purchasesContainer = $('#purchasesContainer');
+      purchasesContainer.empty();
+      var accountContainer = $('#modal-account');
+      accountContainer.empty();
+      accountContainer.append(`<strong>Cuenta:</strong> <span class="merch-cuenta"" >${purchases[0].account}</span>`);
+      for (var i = 0; i < purchases.length; i++) {
+        var merchTemplate = `
+          <div class="merch-purchase">
+            <h3 class="panel-title-modal">${purchases[i].name}</h3>
+            <img class="merch-picture" src="${purchases[i].picture}" alt="${purchases[i].name}">
+            <div class="merch-details">
+              <strong>Color:</strong> <span class="merch-color">${purchases[i].color}</span><br/>
+              <strong>Talla:</strong> <span class="merch-size">${purchases[i].size}</span><br/>
+              <strong>Marca:</strong> <span class="merch-brand">${purchases[i].brand}</span><br/>
+              <strong>Precio:</strong> <span class="merch-price">${(purchases[i].price / 10**18)} ETH</span><br/>
+              <strong>Cantidad Comprada:</strong> <span class="merch-quantity">${purchases[i].quantity}</span>
+            </div>
+          </div>
+        `;
+        purchasesContainer.append(merchTemplate);
+      }
+    },
+    
+    
+
 
   markBought: () => {
     App.contracts.Buy.deployed().then((instance) => {
@@ -95,6 +177,7 @@ App = {
   
     web3.eth.getAccounts(async (error, accounts) => {
       if (error) {
+        $('.fondoBoton').eq(merchId).find('button').attr('disabled', false);
         console.log(error);
       }
       var account = accounts[0];

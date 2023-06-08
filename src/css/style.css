@@ -72,6 +72,30 @@ margin-bottom: 80px;
 .colorcard{
     background-color: rgba(154, 152, 140, 0.744);
 }
+
+.modal-title {
+    text-align: center;
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(48, 107, 97);
+    
+}
+
+.merch-picture{
+    width: 300px; 
+    height: 300px; 
+    display: block; 
+    margin: 0 auto;
+}
+
+.merch-cuenta{
+    text-align: center;
+    font-size: 16px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(133, 26, 23);
+    
+}
+
 @media (min-width: 768px) {
     .panel-merch {
         height: 430px;

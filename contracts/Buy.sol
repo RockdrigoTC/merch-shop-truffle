@@ -17,4 +17,13 @@ contract Buy {
         require(merchId >= 0 && merchId <= 7);
         return merchs[merchId].buyers;
     }
+
+    function getBuyersCount(uint merchId) public view returns (uint) {
+        require(merchId >= 0 && merchId <= 7);
+        return merchs[merchId].buyers.length;
+    }
+
+    function getMerchCount() public pure returns (uint) {
+        return 8;
+    }
 }
