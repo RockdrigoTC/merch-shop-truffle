@@ -103,6 +103,10 @@ justify-content: center;
     
 }
 
+.modal-content{
+    width: 80%;
+}
+
 #btnShowPurchases {
     padding: 8px 16px;
     background-color: rgb(154, 152, 140);
