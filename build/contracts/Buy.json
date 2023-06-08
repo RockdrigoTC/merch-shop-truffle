@@ -86,7 +86,7 @@
   "sourceMap": "27:738:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:738:0;;;;;;;",
   "deployedSourceMap": "27:738:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;683:79;;8:9:-1;5:2;;;30:1;27;20:12;5:2;683:79:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;331:168;;8:9:-1;5:2;;;30:1;27;20:12;5:2;331:168:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;331:168:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;331:168:0;;;;;;;;;;;;;;;;;135:188;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;135:188:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;507:168;;8:9:-1;5:2;;;30:1;27;20:12;5:2;507:168:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;507:168:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;683:79;729:4;753:1;746:8;;683:79;:::o;331:168::-;385:16;433:1;422:7;:12;;:28;;;;;449:1;438:7;:12;;422:28;414:37;;;;;;469:6;476:7;469:15;;;;;;;;:22;;462:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;331:168;;;:::o;135:188::-;186:4;222:1;211:7;:12;;:28;;;;;238:1;227:7;:12;;211:28;203:37;;;;;;251:6;258:7;251:15;;;;;;;;:22;;279:10;251:39;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;251:39:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;308:7;301:14;;135:188;;;:::o;507:168::-;566:4;602:1;591:7;:12;;:28;;;;;618:1;607:7;:12;;591:28;583:37;;;;;;638:6;645:7;638:15;;;;;;;;:22;;:29;;;;631:36;;507:168;;;:::o",
   "source": "pragma solidity ^0.5.0;\r\n\r\ncontract Buy {\r\n    struct Merch {\r\n        address[] buyers;\r\n    }\r\n\r\n    Merch[8] private merchs;\r\n\r\n    function buy(uint merchId) public payable returns (uint) {\r\n        require(merchId >= 0 && merchId <= 7);\r\n        merchs[merchId].buyers.push(msg.sender);\r\n        return merchId;\r\n    }\r\n\r\n    function getBuyers(uint merchId) public view returns (address[] memory) {\r\n        require(merchId >= 0 && merchId <= 7);\r\n        return merchs[merchId].buyers;\r\n    }\r\n\r\n    function getBuyersCount(uint merchId) public view returns (uint) {\r\n        require(merchId >= 0 && merchId <= 7);\r\n        return merchs[merchId].buyers.length;\r\n    }\r\n\r\n    function getMerchCount() public pure returns (uint) {\r\n        return 8;\r\n    }\r\n}\r\n",
-  "sourcePath": "E:\\Desarrollo\\Programacion\\truffle-merch-shop\\contracts\\Buy.sol",
+  "sourcePath": "C:\\Users\\vicma\\Documents\\merch-shop-truffle\\contracts\\Buy.sol",
   "ast": {
     "absolutePath": "project:/contracts/Buy.sol",
     "exportedSymbols": {
@@ -2750,12 +2750,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x188B80C9580cebf76c276d176bcB3dc5D42D9e2b",
-      "transactionHash": "0xfefddfcddd7bd10fc9660bdc7ecb7d1b79edba9653ae36df2ba49c5bca124d52"
+      "address": "0x7B594AF5C66b6f56637192C577733E841a767C03",
+      "transactionHash": "0xde6c88d999085fe9402277f704f727f9c1f9ff1a46b2b5702f6e3578c02ba344"
     }
   },
   "schemaVersion": "3.4.14",
-  "updatedAt": "2023-06-08T14:53:07.110Z",
+  "updatedAt": "2023-06-08T17:47:45.379Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
